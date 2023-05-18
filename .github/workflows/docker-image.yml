@@ -32,9 +32,10 @@ jobs:
       - name: Execute remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }} # Это переменная с IP-адресом сервера
-          username: ${{ secrets.USER }} # Это переменная с пользователем для подключении к серверу по SSH
-          key: ${{ secrets.SSH_KEY }} # Это переменная публичным ключем для подключения к серверу
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: |
             sudo docker stop main_container 
             sudo docker system prune -a -f
