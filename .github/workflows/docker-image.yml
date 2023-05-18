@@ -40,4 +40,4 @@ jobs:
             sudo docker stop main_container 
             sudo docker system prune -a -f
             sudo docker pull immoltex/my_python_app:latest 
-            sudo nohup docker run --name main_container -d
+            sudo nohup docker run --name main_container -d immoltex/my_python_app:latest
